@@ -1,4 +1,4 @@
-# counter_stream
+# flutter-counter-app
 
 A new Flutter project.
 
