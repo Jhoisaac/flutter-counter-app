@@ -1,6 +1,6 @@
 import 'package:counter_stream/bloc/bloc_provider.dart';
 import 'package:counter_stream/bloc/increment_bloc.dart';
-import 'package:counter_stream/view/CounterPage.dart';
+import 'package:counter_stream/view/counter_page.dart';
 
 import 'package:flutter/material.dart';
 
