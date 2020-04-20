@@ -1,19 +1,16 @@
+import 'package:counter_stream/bloc/bloc_base.dart';
 import 'package:flutter/material.dart';
 
 /*typedef BlocBuilder<T> = T Function();*/
-typedef BlocDisposer<T> = Function(T);
-
-abstract class BlocBase {
-  void dispose();
-}
+/*typedef BlocDisposer<T> = Function(T);*/
 
 class BlocProvider<T extends BlocBase> extends StatefulWidget {
-  const BlocProvider({ Key key, @required this.child, @required this.bloc, this.blocDispose,})
+  const BlocProvider({ Key key, @required this.child, @required this.bloc, /*this.blocDispose,*/})
       : super(key: key);
 
   final Widget child;
   final T bloc;
-  final BlocDisposer<T> blocDispose;
+  /*final BlocDisposer<T> blocDispose;*/
 
   @override
   _BlocProviderState<T> createState() => _BlocProviderState<T>();
@@ -37,11 +34,13 @@ class _BlocProviderState<T extends BlocBase> extends State<BlocProvider<T>>{
 
   @override
   void dispose(){
-    if (widget.blocDispose != null){
+    /*if (widget.blocDispose != null){
       widget.blocDispose(bloc);
     } else {
       bloc?.dispose();
-    }
+    }*/
+
+    bloc?.dispose();
     super.dispose();
   }
   
